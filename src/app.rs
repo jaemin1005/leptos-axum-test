@@ -1,4 +1,7 @@
-use crate::error_template::{AppError, ErrorTemplate};
+use crate::{
+    components::test_component::TestComponent,
+    error_template::{AppError, ErrorTemplate},
+};
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
@@ -9,8 +12,6 @@ pub fn App() -> impl IntoView {
     provide_meta_context();
 
     view! {
-
-
         // injects a stylesheet into the document <head>
         // id=leptos means cargo-leptos will hot-reload this stylesheet
         <Stylesheet id="leptos" href="/pkg/leptos-axum-test.css"/>
@@ -46,5 +47,6 @@ fn HomePage() -> impl IntoView {
     view! {
         <h1 class="text-cyan-400">"Welcome to Leptos!"</h1>
         <button on:click=on_click>"Click Me: " {count}</button>
+        <TestComponent max=100 calc_val=count />
     }
 }
