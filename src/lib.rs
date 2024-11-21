@@ -1,5 +1,8 @@
 pub mod app;
 pub mod error_template;
+pub mod components {
+    pub mod test_component;
+}
 #[cfg(feature = "ssr")]
 pub mod fileserv;
 
